@@ -1,0 +1,17 @@
+h1, h3 {
+  font-family: 'Roboto Slab', serif;
+}
+p {
+  font-family: Helvetica, Arial, sans-serif;
+}
+h1, h3, p {
+  text-align: left;
+}
+.container {
+  margin: auto 0;
+  text-align: center;
+  background-color: #fff;
+}
+body {
+  background-color: #ccc;
+}

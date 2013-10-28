@@ -24,3 +24,6 @@ end
 Get gets the information from the server. In this case, it's the index.erb file. It displays in the root folder, so it can be accessed from the domain, i.e. example.com. 
 
 Next, the erb file is created. It contains all of the HTML for the app, and contains all of the front-end information. A stylesheet is also included in the Public folder in order to make it look pretty and readable. 
+
+Now, I've made a Heroku account, and am now downloading the Heroku Toolbelt. 
+
