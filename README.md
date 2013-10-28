@@ -27,3 +27,4 @@ Next, the erb file is created. It contains all of the HTML for the app, and cont
 
 Now, I've made a Heroku account, and am now downloading the Heroku Toolbelt. 
 
+I've encountered some errors with Heroku. I need a Gemfile, a Gemfile.lock (generated during bundle), and config.ru. It shows up on localhost, but now it's really screwing up with Heroku. I'll investigate the situation in detail.
