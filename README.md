@@ -27,9 +27,19 @@ Get gets the information from the server. In this case, it's the index.erb file.
 
 Next, the erb file is created. It contains all of the HTML for the app, and contains all of the front-end information. A stylesheet is also included in the Public folder in order to make it look pretty and readable. 
 
+The erb file looks like this:
+
+```html
+<style>
+  <!--css here-->
+</style>
+<h1>Header</h1>
+<p>Paragraphs</p>
+```
+
 Now, I've made a Heroku account, and am now downloading the Heroku Toolbelt. 
 
-I've encountered some errors with Heroku. I need a Gemfile, a Gemfile.lock (generated during bundle), and config.ru. It shows up on localhost, but now it's really screwing up with Heroku. I'll investigate the situation in detail.
+I've encountered some errors with Heroku. I need a Gemfile, a Gemfile.lock (generated during bundle), and config.ru. It shows up on localhost, but now it's really screwing up with Heroku. I'll investigate the situation in detail. To fix this, I created a Gemfile, a config.ru, a Procfile, and bundled them in order to create a Gemfile.lock. 
 
 The errors were fixed for now by simply putting the CSS in styles. We need to cover how to use a public folder with an external stylesheet.
 
