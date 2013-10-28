@@ -1,7 +1,7 @@
 Thing-O-Nicole
 ==============
 
-Release 1
+### Release 1
 
 1) Choose Your Thing-O
 
@@ -17,9 +17,11 @@ To create a repo, I simply clicked the "Create a Repo" button in the upper right
 
 To create the routes to make the app, simply type:
 
+```ruby
 get '/' do
   erb :index
 end
+```
 
 Get gets the information from the server. In this case, it's the index.erb file. It displays in the root folder, so it can be accessed from the domain, i.e. example.com. 
 
@@ -32,3 +34,4 @@ I've encountered some errors with Heroku. I need a Gemfile, a Gemfile.lock (gene
 The errors were fixed for now by simply putting the CSS in styles. We need to cover how to use a public folder with an external stylesheet.
 
 Here's the Heroku app: [Thing-O-Nicole Heroku](http://thing-o-nicole.herokuapp.com/).
+
