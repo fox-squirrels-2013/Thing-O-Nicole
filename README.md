@@ -30,3 +30,5 @@ Now, I've made a Heroku account, and am now downloading the Heroku Toolbelt.
 I've encountered some errors with Heroku. I need a Gemfile, a Gemfile.lock (generated during bundle), and config.ru. It shows up on localhost, but now it's really screwing up with Heroku. I'll investigate the situation in detail.
 
 The errors were fixed for now by simply putting the CSS in styles. We need to cover how to use a public folder with an external stylesheet.
+
+Here's the Heroku app: [Thing-O-Nicole Heroku](http://thing-o-nicole.herokuapp.com/).
