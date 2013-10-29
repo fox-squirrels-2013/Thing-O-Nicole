@@ -45,8 +45,20 @@ The errors were fixed for now by simply putting the CSS in styles. We need to co
 
 Here's the Heroku app: [Thing-O-Nicole Heroku](http://thing-o-nicole.herokuapp.com/).
 
-### Score Card
+The forms were also updated, which allow users to change the database. They can delete and add. Here's how it looks like:
 
-| Coders Mindset | Testing & TDD | Debugging | Ruby Webapps | ActiveRecord | HTML & CSS |
-| -------------- | ------------- | --------- | ------------ | ------------ | ---------- |
-|                |               |           |              |              |            |
+```ruby
+get '/ratios/' do
+  @title = "Ratio List"
+  @all_ratios = Screen.all
+  erb :ratios
+end
+
+post '/add/' do
+  @title = "Ratio List"
+  new_posted_ratio = params[:new_ratio]
+  Screen.create(:name => new_posted_ratio[:name])
+  @all_ratios = Screen.all
+  erb :ratios
+end
+```
