@@ -45,3 +45,8 @@ The errors were fixed for now by simply putting the CSS in styles. We need to co
 
 Here's the Heroku app: [Thing-O-Nicole Heroku](http://thing-o-nicole.herokuapp.com/).
 
+### Score Card
+
+| Coders Mindset | Testing & TDD | Debugging | Ruby Webapps | ActiveRecord | HTML & CSS |
+| -------------- | ------------- | --------- | ------------ | ------------ | ---------- |
+|                |               |           |              |              |            |
