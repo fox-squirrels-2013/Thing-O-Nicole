@@ -2,7 +2,8 @@ require 'sinatra'
 require 'active_record'
 require_relative './app/models/screen'
 
-ActiveRecord::Base.establish_connection(adapter: 'postgresql')
+ActiveRecord::Base.establish_connection(adapter: 'postgresql',
+                                        database: 'screens')
 
 get '/' do
   @headers    = ["Television and Movie Screens", "Aspect Ratios", "Analog vs Digital", "Television Systems"]

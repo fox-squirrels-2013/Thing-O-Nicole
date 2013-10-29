@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20131028142914) do
   enable_extension "plpgsql"
 
   create_table "screens", force: true do |t|
-    t.string "name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
