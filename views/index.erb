@@ -1,0 +1,12 @@
+<h1>Cats!!!</h1>
+
+<h2>Make a Cat:</h2>
+<form id="add" action="/create/new" method="post">
+  <input type="text" name="name" placeholder="Cat name">
+
+  <input type="submit" value="Make a Cat">
+</form>
+
+<div id="cats">
+  <%= erb :_show_kitties %>
+</div>

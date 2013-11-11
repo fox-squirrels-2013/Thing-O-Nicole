@@ -1,0 +1,13 @@
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+img {
+  width: 200px;
+}
+h1, h2, form {
+  text-align: center;
+}
+.a_cat, .new_cat {
+  text-align: center;
+}
