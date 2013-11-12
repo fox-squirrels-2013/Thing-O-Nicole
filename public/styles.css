@@ -1,6 +1,7 @@
 .container {
   width: 960px;
   margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 img {
   width: 200px;
@@ -9,5 +10,8 @@ h1, h2, form {
   text-align: center;
 }
 .a_cat, .new_cat {
+  text-align: center;
+}
+#error {
   text-align: center;
 }

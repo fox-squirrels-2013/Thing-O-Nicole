@@ -18,7 +18,13 @@ post '/create/new' do
 
   @cats = Cat.all
 
-  erb :_show_kitties, layout: false
+  @errors = @cat.errors.messages
+
+  if @errors != {}
+    {name: @errors[:name]}.to_json
+  else
+    erb :_show_kitties, layout: false
+  end
 end
 
 put '/cat/:id/update' do

@@ -7,7 +7,12 @@ $(document).ready(function() {
       method: 'post',
       data: form_data
     }).done(function(server_data) {
-      $('div#cats').html(server_data)
+      var parse = $.parseJSON(server_data)
+      if (typeof parse == 'object') {
+        $('div#error').html(parse['name'])
+      } else {
+        $('div#cats').html(server_data)
+      }
     })
   })  
 
