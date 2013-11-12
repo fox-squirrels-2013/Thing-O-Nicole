@@ -1,0 +1,32 @@
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/styles.css">
+
+<div class="container">
+  <h1><%= @title %></h1>
+  <form action="/add/" method="post">
+    <label for="new_ratio">New Ratio:</label>
+    <br>
+    <input class="form_input" id="new_ratio" name="new_ratio[name]" type="text">
+    <input type="submit" value="Create New Ratio">
+  </form>
+  <form action="/delete/" method="post">
+    <label for="delete_ratio">Delete Ratio (ID):</label>
+    <br>
+    <input class="form_input" id="delete_ratio" name="delete_ratio[id]" type="text">
+    <input type="submit" value="Delete Ratio">
+  </form>
+
+  <table>
+    <tr class="head">
+      <td>ID</td><td>Ratio</td>
+    </tr>
+  <% @all_ratios.each do |ratio| %>
+      <tr>
+        <td><%= "#{ratio[:id]}" %></td>
+        <td><%= "#{ratio[:name]}" %></td>
+      </tr>
+  <% end %>
+  </table>
+</div>
+
+

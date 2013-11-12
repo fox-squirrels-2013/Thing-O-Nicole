@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131111014829) do
     t.string   "name"
     t.string   "img_height"
     t.string   "img_width"
+    
     t.datetime "created_at"
     t.datetime "updated_at"
   end
