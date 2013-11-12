@@ -1,35 +1,41 @@
 require 'sinatra'
 require 'active_record'
-require_relative './app/models/screen'
+require_relative './app/models/cat'
 
 ActiveRecord::Base.establish_connection(adapter: 'postgresql',
-                                        database: 'screens')
+                                        database: 'cats')
 
 get '/' do
-  @headers    = ["Television and Movie Screens", "Aspect Ratios", "Analog vs Digital", "Television Systems"]
-  @paragraphs = ["Aspect ratios come in many forms depending on the type of screen. Both television and movie screens are traditionally a 4:3 ratio; that is, their width is slightly larger than the height. It's also known as 1.33. For silent films, this was the standard, until sound came around and they had to fit the strip containing the sound information on the side of the film. The sound replacement, standardized in 1932, was 1.37, and used until 1938.", "Newer television screens are 16:1. Movies, however, are wider, and that is why there are two black bars on the screen when a movie shows on TV.", "Analog simply describes the signal. Most new movies and TV are digital, forcing people with older TVs to get a video converter in order to see their channels. Not all TV shows or movies are digital, however. Some types of channels, such as public access television, can be analog, and some directors prefer film, such as Quentin Tarantino.", "There are several television systems available, but the two that most Americans come across are NTSC and PAL. NTSC is the standard in the US, while PAL is used in most of Europe. It's simply the amount of lines on the screen, and only applies to analog signals. There are several television systems available, but the two that most Americans come across are NTSC and PAL. NTSC is the standard in the US, while PAL is used in most of Europe. It's simply the amount of lines on the screen, and only applies to analog signals."]
+  @cats = Cat.all
+
   erb :index
 end
 
-get '/ratios/' do
-  @title = "Ratio List"
-  @all_ratios = Screen.all
-  erb :ratios
+post '/create/new' do
+  img_height = rand(200..1500)
+  img_width = rand(200..1500)
+  @cat = Cat.create(name: params[:name], img_height: img_height, img_width: img_width)
+
+  @cats = Cat.all
+
+  @errors = @cat.errors.messages
+
+  if @errors != {}
+    {name: @errors[:name]}.to_json
+  else
+    erb :_show_kitties, layout: false
+  end
 end
 
-post '/add/' do
-  @title = "Ratio List"
-  new_posted_ratio = params[:new_ratio]
-  Screen.create(:name => new_posted_ratio[:name])
-  @all_ratios = Screen.all
-  erb :ratios
+put '/cat/:id/update' do
+  @cat = Cat.find_by_id(params[:id]).update_attributes(name: params[:name])
+  @cats = Cat.all
+
+  erb :_show_kitties, layout: false
 end
 
-post '/delete/' do
-  @title = "Delete a Ratio"
-  delete_posted_ratio = params[:delete_ratio]
-  to_delete = Screen.find(delete_posted_ratio[:id].to_i)
-  Screen.delete(to_delete)
-  @all_ratios = Screen.all
-  erb :ratios
+delete '/cat/:id/delete' do
+  Cat.find_by_id(params[:id]).destroy
+
+  erb :_show_kitties, layout: false
 end

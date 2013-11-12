@@ -1,20 +1,12 @@
-<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="/styles.css">
+<h1>Cats!!!</h1>
 
-<div class='container'>
-  <h1><%= @headers[0] %></h1>
+<h2>Make a Cat:</h2>
+<form id="add" action="/create/new" method="post">
+  <input type="text" name="name" placeholder="Cat name">
 
-  <h3><%= @headers[1] %></h3>
-
-  <p><%= @paragraphs[0] %></p>
-
-  <p><%= @paragraphs[1] %></p>
-
-  <h3><%= @headers[2] %></h3>
-
-  <p><%= @paragraphs[2] %></p>
-
-  <h3><%= @headers[3] %></h3>
-
-  <p><%= @paragraphs[3] %></p>
+  <input type="submit" value="Make a Cat">
+</form>
+<div id="error"></div>
+<div id="cats">
+  <%= erb :_show_kitties %>
 </div>

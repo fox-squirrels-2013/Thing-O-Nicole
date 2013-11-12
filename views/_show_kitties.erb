@@ -1,0 +1,18 @@
+<% if @cats %>
+  <% @cats.each do |cat| %>
+    <div class="a_cat">
+      <h3><%= cat.name %></h3>
+      <img src="http://placekitten.com/<%= cat.img_width %>/<%= cat.img_height %>">
+      <br>
+      <form id="<%=cat.id%>" class="update" method="post" action="/cat/<%= cat.id %>/update">
+        <input type="hidden" method="_method" action="put">
+        <input type="text" placeholder="Cat Name" name="name">
+        <input type="submit" value="Update Kitty's Name!">
+      </form>
+      <form id="<%=cat.id%>" class="delete" method="post" action="/cat/<%= cat.id %>/delete">
+        <input type="hidden" method="_method" action="delete">
+        <input type="submit" value="Delete Kitty (You Bastard)!">
+      </form>
+    </div>
+  <% end %>  
+<% end %>
